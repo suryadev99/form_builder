@@ -1,9 +1,6 @@
-# Pyformbuilder
+# form builder
+# Author Name : Surya Dev S 
 
-
-Pyformbuilder is [Jquery and HTML5 Form Builder] in Python way.
-
-Created the loader for Python with Flask module.
 
 ## How to use
 - Install the requirement first
@@ -14,5 +11,3 @@ $ sudo pip install -r requirements.txt
 ```sh
 $ python index.py
 ```
-
-[Jquery and HTML5 Form Builder]:https://github.com/shlomnissan/formbuilder
