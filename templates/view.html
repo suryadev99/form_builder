@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>View</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="col-sm-6 col-sm-offset-3">
+            <p> Name: <span id = "display_message"> {{ render_form.name }} </span> </p>
+            <p> Mobile Number: <span id = "display_message"> {{render_form.mobile_number}} </span> </p>
+            <p> Email: <span id = "display_message">{{render_form.email}}</span> </p>
+            <p> Gender: <span id = "display_message"> {{render_form.gender}}</span> </p>
+            <p> Subject: <span id = "display_message"> {{render_form.subject}}</span> </p>
+		</div>
+	</div>
+</body>
+</html>

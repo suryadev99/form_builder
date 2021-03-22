@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <script src="../../src/static/js/libraries/jquery.min.js"></script>
+    <script src="../../src/static/js/libraries/bootstrap.min.js"></script>
+
+    <title>Form Builder</title>
+
+    <link rel="stylesheet" href="src/static/css/style.css">
+  
+  {% block head %} {% endblock %}
+  
+</head>
+
+<body id="body">
+  
+  <div class="header">
+    <a href="http://localhost:5000/" class="logo">Form Builder</a>
+    <div class="header-right">
+      <a class="home" id="home" href="http://localhost:5000/">Home</a>
+      <a class="form_list" id= "form_list" href="http://localhost:5000/List">List</a>
+    </div>
+  </div>
+  <div class="container">
+    <br/>
+
+    {% block body %}
+    
+    {% endblock %}
+  </div>
+  <script src="{{url_for('static', filename='static/js/form.js')}}"></script>
+</body>
+</html>

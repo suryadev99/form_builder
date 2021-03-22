@@ -1,0 +1,71 @@
+{% extends "main.html" %}
+
+{% block head %} 
+<link rel="stylesheet" href="src/static/css/style.css">
+{% endblock %}
+
+{% block body %}
+<h1 align="center">Form Details</h1>
+<div class="row">
+    
+    <div id="Search" class="col-11">
+        
+    <form action="http://localhost:5000/search" method="POST"> 
+        <input type="text" id="s" name="s" placeholder="Search Item Here" align="center">
+        <input type="submit" value="Search">
+    </form>
+    </div>
+
+    <!-- <div class="col-1" align="right">
+        <a href="http://localhost:5000/List">
+            Forms({{length}})
+        </a>
+
+    </div> -->
+</div>
+<br/>
+<div class="clearfix">
+
+</div>
+
+<div class="row">
+{% for i in range(l)%}
+
+
+<div class="clearfix" ></div>
+
+
+    <div class="col-4" style="border-radius: 2px;
+  border: 1px solid #73AD21; margin-bottom: 10px;
+ 
+  ">
+        <table class="table" id= "{{prod[i].form_id}}">
+            <caption></caption>
+        <tr>
+            <th id =empty_th> </th>
+        </tr>
+      
+        <tr>
+            <td>{{prod[i].form_id}}</td>
+            <td>{{prod[i].name}}</td>
+        </tr>
+
+        <tr>
+            <td colspan=2><a id="view_form" href="http://localhost:5000/view/{{prod[i].form_id}}">View Form</a></td>
+        </tr>
+        
+        <tr>
+            <td colspan=2> <a id="edit_form" href="http://localhost:5000/render/{{prod[i].form_id}}"> Edit Form  </a>  </td>
+        </tr>
+
+        <tr>
+            <td colspan=2><a id="delete_form" href="http://localhost:5000/delete/{{prod[i].form_id}}">Delete</a></td>
+        </tr>
+        
+        </table>
+    </div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,842 @@
+2021-03-21 19:47:33.835 | ERROR    | __main__:submit:165 - Exception occured in submit handler route: 57c9d413-2d54-4516-94a2-82bced17c315 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7fa8bcd0fd40>
+    └ <Thread(Thread-17, started daemon 140362635867904)>
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7fa8bcd0fb00>
+    └ <Thread(Thread-17, started daemon 140362635867904)>
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-17, started daemon 140362635867904)>
+    │    │        │    └ (<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    │        └ <Thread(Thread-17, started daemon 140362635867904)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x7fa8bb210990>>
+    └ <Thread(Thread-17, started daemon 140362635867904)>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 46800)
+    │    │              └ <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('...
+    │    └ <function BaseServer.finish_request at 0x7fa8bc4ca7a0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7fa8bb210990>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x7fa8bb210990>
+    │    │                   │        └ ('127.0.0.1', 46800)
+    │    │                   └ <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7fa8bb210990>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 720, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x7fa8bc1f9b90>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x7fa8b888d550>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 345, in handle
+    BaseHTTPRequestHandler.handle(self)
+    │                      │      └ <werkzeug.serving.WSGIRequestHandler object at 0x7fa8b888d550>
+    │                      └ <function BaseHTTPRequestHandler.handle at 0x7fa8bc2645f0>
+    └ <class 'http.server.BaseHTTPRequestHandler'>
+  File "/home/ubuntu/anaconda/lib/python3.7/http/server.py", line 426, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x7fa8bc1f9d40>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x7fa8b888d550>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 379, in handle_one_request
+    return self.run_wsgi()
+           │    └ <function WSGIRequestHandler.run_wsgi at 0x7fa8bc1f9b00>
+           └ <werkzeug.serving.WSGIRequestHandler object at 0x7fa8b888d550>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 323, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x7fa8bb2c0250>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7fa8bb210990>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x7fa8b888d550>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x7fa8b8892440>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 314, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x7fa8baf7cdd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/debug/__init__.py", line 304, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x7fa8b88923b0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=10>, 'wsgi.errors': <_io.TextIOWra...
+               │    └ <Flask 'index'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x7fa8bb2c0250>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x7fa8b88923b0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=10>, 'wsgi.errors': <_io.TextIOWra...
+           │    └ <function Flask.wsgi_app at 0x7fa8bbf517a0>
+           └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x7fa8bbf4ee60>
+               └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x7fa8bbf4edd0>
+         └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+           │    │              │    │           │   └ {'form_id2': '57c9d413-2d54-4516-94a2-82bced17c315'}
+           │    │              │    │           └ <Request 'http://localhost:5000/submit/57c9d413-2d54-4516-94a2-82bced17c315/' [POST]>
+           │    │              │    └ 'submit'
+           │    │              └ <Rule '/submit/<form_id2>/' (POST, OPTIONS) -> submit>
+           │    └ {'static': <bound method _PackageBoundObject.send_static_file of <Flask 'index'>>, 'index': <function index at 0x7fa8bb288560...
+           └ <Flask 'index'>
+
+> File "/home/ubuntu/pyformbuilder/index.py", line 109, in submit
+    subject = request.form["subject"]
+              └ <Request 'http://localhost:5000/submit/57c9d413-2d54-4516-94a2-82bced17c315/' [POST]>
+
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/datastructures.py", line 442, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+          │          │                  └ 'subject'
+          │          └ <class 'werkzeug.exceptions.BadRequestKeyError'>
+          └ <module 'werkzeug.exceptions' from '/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/exceptions.py'>
+
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2021-03-21 20:01:17.722 | ERROR    | __main__:submit:165 - Exception occured in submit handler route: 57c9d413-2d54-4516-94a2-82bced17c315 - (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: UPDATE forms SET subject=? WHERE forms.form_id = ?]
+[parameters: (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')]
+(Background on this error at: http://sqlalche.me/e/13/rvf5)
+Traceback (most recent call last):
+
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+    │       │          │           └ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x7ffab150cd10>
+    │       │          └ (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │       └ 'UPDATE forms SET subject=? WHERE forms.form_id = ?'
+    └ <sqlite3.Cursor object at 0x7ffab15119d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │      │       └ 'UPDATE forms SET subject=? WHERE forms.form_id = ?'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7ffab15119d0>
+
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7ffab617dd40>
+    └ <Thread(Thread-9, started daemon 140714702259968)>
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7ffab617db00>
+    └ <Thread(Thread-9, started daemon 140714702259968)>
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-9, started daemon 140714702259968)>
+    │    │        │    └ (<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    │        └ <Thread(Thread-9, started daemon 140714702259968)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>>
+    └ <Thread(Thread-9, started daemon 140714702259968)>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 46986)
+    │    │              └ <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('...
+    │    └ <function BaseServer.finish_request at 0x7ffab59397a0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+    │    │                   │        └ ('127.0.0.1', 46986)
+    │    │                   └ <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 720, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x7ffab5667b90>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab43e6850>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 345, in handle
+    BaseHTTPRequestHandler.handle(self)
+    │                      │      └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab43e6850>
+    │                      └ <function BaseHTTPRequestHandler.handle at 0x7ffab56d25f0>
+    └ <class 'http.server.BaseHTTPRequestHandler'>
+  File "/home/ubuntu/anaconda/lib/python3.7/http/server.py", line 426, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x7ffab5667d40>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab43e6850>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 379, in handle_one_request
+    return self.run_wsgi()
+           │    └ <function WSGIRequestHandler.run_wsgi at 0x7ffab5667b00>
+           └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab43e6850>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 323, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x7ffab472e2d0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab43e6850>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x7ffab43e4ef0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 314, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x7ffab442af50>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/debug/__init__.py", line 304, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x7ffab43e4f80>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=10>, 'wsgi.errors': <_io.TextIOWra...
+               │    └ <Flask 'index'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x7ffab472e2d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x7ffab43e4f80>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=10>, 'wsgi.errors': <_io.TextIOWra...
+           │    └ <function Flask.wsgi_app at 0x7ffab53bf7a0>
+           └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x7ffab53bce60>
+               └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x7ffab53bcdd0>
+         └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+           │    │              │    │           │   └ {'form_id2': '57c9d413-2d54-4516-94a2-82bced17c315'}
+           │    │              │    │           └ <Request 'http://localhost:5000/submit/57c9d413-2d54-4516-94a2-82bced17c315/' [POST]>
+           │    │              │    └ 'submit'
+           │    │              └ <Rule '/submit/<form_id2>/' (POST, OPTIONS) -> submit>
+           │    └ {'static': <bound method _PackageBoundObject.send_static_file of <Flask 'index'>>, 'index': <function index at 0x7ffab46f6560...
+           └ <Flask 'index'>
+
+> File "/home/ubuntu/pyformbuilder/index.py", line 152, in submit
+    db.session.commit()
+    │  │       └ <function instrument.<locals>.do at 0x7ffab4d86e60>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x7ffab48b0fd0>
+    └ <SQLAlchemy engine=sqlite:////home/ubuntu/pyformbuilder/myforms.db>
+
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+                   │    │           │      │       └ {}
+                   │    │           │      └ ()
+                   │    │           └ 'commit'
+                   │    └ <sqlalchemy.util._collections.ScopedRegistry object at 0x7ffab48b0f90>
+                   └ <sqlalchemy.orm.scoping.scoped_session object at 0x7ffab48b0fd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1042, in commit
+    self.transaction.commit()
+    │    │           └ <function SessionTransaction.commit at 0x7ffab4d817a0>
+    │    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab43e6350>
+    └ <sqlalchemy.orm.session.SignallingSession object at 0x7ffab4b577d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x7ffab4d81710>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab43e6350>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x7ffab4d84b90>
+    │    └ <sqlalchemy.orm.session.SignallingSession object at 0x7ffab4b577d0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab43e6350>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2536, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x7ffab4d84d40>
+    └ <sqlalchemy.orm.session.SignallingSession object at 0x7ffab4b577d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2678, in _flush
+    transaction.rollback(_capture_exception=True)
+    │           └ <function SessionTransaction.rollback at 0x7ffab4d81830>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab1546c90>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+                   └ <traceback object at 0x7ffab1557280>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2638, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x7ffab4dccd40>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x7ffab1546c50>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x7ffab1546c50>
+    │   └ <function SaveUpdateAll.execute at 0x7ffab4dd15f0>
+    └ SaveUpdateAll(mapped class Forms->forms)
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x7ffab1546c50>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+    update,
+    └ <generator object _collect_update_commands at 0x7ffab43f9b50>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 995, in _emit_update_statements
+    statement, multiparams
+    │          └ [{'subject': ['English', 'Chemistry', 'Physics'], 'forms_form_id': '57c9d413-2d54-4516-94a2-82bced17c315'}]
+    └ <sqlalchemy.sql.dml.Update object at 0x7ffab157b9d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+           │    │     │            └ {}
+           │    │     └ ([{'subject': ['English', 'Chemistry', 'Physics'], 'forms_form_id': '57c9d413-2d54-4516-94a2-82bced17c315'}],)
+           │    └ <sqlalchemy.engine.base.Connection object at 0x7ffab157b550>
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Update object at 0x7ffab157b9d0>>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+           │          │                      │     │            └ {}
+           │          │                      │     └ ([{'subject': ['English', 'Chemistry', 'Physics'], 'forms_form_id': '57c9d413-2d54-4516-94a2-82bced17c315'}],)
+           │          │                      └ <sqlalchemy.sql.dml.Update object at 0x7ffab157b9d0>
+           │          └ <function Connection._execute_clauseelement at 0x7ffab4ffb050>
+           └ <sqlalchemy.engine.base.Connection object at 0x7ffab157b550>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+    └ [{'subject': ['English', 'Chemistry', 'Physics'], 'forms_form_id': '57c9d413-2d54-4516-94a2-82bced17c315'}]
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+       │          │           │       └ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x7ffab150cd10>
+       │          │           └ <sqlite3.Cursor object at 0x7ffab15119d0>
+       │          └ (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+       └ 'UPDATE forms SET subject=? WHERE forms.form_id = ?'
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+    │                                    │                  └ InterfaceError('Error binding parameter 0 - probably unsupported type.')
+    │                                    └ (<class 'sqlite3.InterfaceError'>, InterfaceError('Error binding parameter 0 - probably unsupported type.'), <traceback objec...
+    └ InterfaceError('(sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.')
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+    │       │          │           └ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x7ffab150cd10>
+    │       │          └ (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │       └ 'UPDATE forms SET subject=? WHERE forms.form_id = ?'
+    └ <sqlite3.Cursor object at 0x7ffab15119d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │      │       └ 'UPDATE forms SET subject=? WHERE forms.form_id = ?'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7ffab15119d0>
+
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: UPDATE forms SET subject=? WHERE forms.form_id = ?]
+[parameters: (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')]
+(Background on this error at: http://sqlalche.me/e/13/rvf5)
+2021-03-21 20:01:23.187 | ERROR    | __main__:submit:165 - Exception occured in submit handler route: 57c9d413-2d54-4516-94a2-82bced17c315 - (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: UPDATE forms SET subject=? WHERE forms.form_id = ?]
+[parameters: (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')]
+(Background on this error at: http://sqlalche.me/e/13/rvf5)
+Traceback (most recent call last):
+
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+    │       │          │           └ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x7ffab0d05490>
+    │       │          └ (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │       └ 'UPDATE forms SET subject=? WHERE forms.form_id = ?'
+    └ <sqlite3.Cursor object at 0x7ffab0d00c00>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │      │       └ 'UPDATE forms SET subject=? WHERE forms.form_id = ?'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7ffab0d00c00>
+
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7ffab617dd40>
+    └ <Thread(Thread-10, started daemon 140714702259968)>
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7ffab617db00>
+    └ <Thread(Thread-10, started daemon 140714702259968)>
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-10, started daemon 140714702259968)>
+    │    │        │    └ (<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    │        └ <Thread(Thread-10, started daemon 140714702259968)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>>
+    └ <Thread(Thread-10, started daemon 140714702259968)>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 46990)
+    │    │              └ <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('...
+    │    └ <function BaseServer.finish_request at 0x7ffab59397a0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+    │    │                   │        └ ('127.0.0.1', 46990)
+    │    │                   └ <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 720, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x7ffab5667b90>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab0cfe250>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 345, in handle
+    BaseHTTPRequestHandler.handle(self)
+    │                      │      └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab0cfe250>
+    │                      └ <function BaseHTTPRequestHandler.handle at 0x7ffab56d25f0>
+    └ <class 'http.server.BaseHTTPRequestHandler'>
+  File "/home/ubuntu/anaconda/lib/python3.7/http/server.py", line 426, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x7ffab5667d40>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab0cfe250>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 379, in handle_one_request
+    return self.run_wsgi()
+           │    └ <function WSGIRequestHandler.run_wsgi at 0x7ffab5667b00>
+           └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab0cfe250>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 323, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x7ffab472e2d0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab0cfe250>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x7ffab0d7c5f0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 314, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x7ffab442af50>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/debug/__init__.py", line 304, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x7ffab0d7c560>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=10>, 'wsgi.errors': <_io.TextIOWra...
+               │    └ <Flask 'index'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x7ffab472e2d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x7ffab0d7c560>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=10>, 'wsgi.errors': <_io.TextIOWra...
+           │    └ <function Flask.wsgi_app at 0x7ffab53bf7a0>
+           └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x7ffab53bce60>
+               └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x7ffab53bcdd0>
+         └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+           │    │              │    │           │   └ {'form_id2': '57c9d413-2d54-4516-94a2-82bced17c315'}
+           │    │              │    │           └ <Request 'http://localhost:5000/submit/57c9d413-2d54-4516-94a2-82bced17c315/' [POST]>
+           │    │              │    └ 'submit'
+           │    │              └ <Rule '/submit/<form_id2>/' (POST, OPTIONS) -> submit>
+           │    └ {'static': <bound method _PackageBoundObject.send_static_file of <Flask 'index'>>, 'index': <function index at 0x7ffab46f6560...
+           └ <Flask 'index'>
+
+> File "/home/ubuntu/pyformbuilder/index.py", line 152, in submit
+    db.session.commit()
+    │  │       └ <function instrument.<locals>.do at 0x7ffab4d86e60>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x7ffab48b0fd0>
+    └ <SQLAlchemy engine=sqlite:////home/ubuntu/pyformbuilder/myforms.db>
+
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+                   │    │           │      │       └ {}
+                   │    │           │      └ ()
+                   │    │           └ 'commit'
+                   │    └ <sqlalchemy.util._collections.ScopedRegistry object at 0x7ffab48b0f90>
+                   └ <sqlalchemy.orm.scoping.scoped_session object at 0x7ffab48b0fd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1042, in commit
+    self.transaction.commit()
+    │    │           └ <function SessionTransaction.commit at 0x7ffab4d817a0>
+    │    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab0d04090>
+    └ <sqlalchemy.orm.session.SignallingSession object at 0x7ffab0d041d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x7ffab4d81710>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab0d04090>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x7ffab4d84b90>
+    │    └ <sqlalchemy.orm.session.SignallingSession object at 0x7ffab0d041d0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab0d04090>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2536, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x7ffab4d84d40>
+    └ <sqlalchemy.orm.session.SignallingSession object at 0x7ffab0d041d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2678, in _flush
+    transaction.rollback(_capture_exception=True)
+    │           └ <function SessionTransaction.rollback at 0x7ffab4d81830>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab43e6650>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+                   └ <traceback object at 0x7ffab0d16b90>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2638, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x7ffab4dccd40>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x7ffab5a52590>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x7ffab5a52590>
+    │   └ <function SaveUpdateAll.execute at 0x7ffab4dd15f0>
+    └ SaveUpdateAll(mapped class Forms->forms)
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x7ffab5a52590>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+    update,
+    └ <generator object _collect_update_commands at 0x7ffab0cff9d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 995, in _emit_update_statements
+    statement, multiparams
+    │          └ [{'subject': ['English', 'Chemistry', 'Physics'], 'forms_form_id': '57c9d413-2d54-4516-94a2-82bced17c315'}]
+    └ <sqlalchemy.sql.dml.Update object at 0x7ffab157b9d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+           │    │     │            └ {}
+           │    │     └ ([{'subject': ['English', 'Chemistry', 'Physics'], 'forms_form_id': '57c9d413-2d54-4516-94a2-82bced17c315'}],)
+           │    └ <sqlalchemy.engine.base.Connection object at 0x7ffab0d05650>
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Update object at 0x7ffab157b9d0>>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+           │          │                      │     │            └ {}
+           │          │                      │     └ ([{'subject': ['English', 'Chemistry', 'Physics'], 'forms_form_id': '57c9d413-2d54-4516-94a2-82bced17c315'}],)
+           │          │                      └ <sqlalchemy.sql.dml.Update object at 0x7ffab157b9d0>
+           │          └ <function Connection._execute_clauseelement at 0x7ffab4ffb050>
+           └ <sqlalchemy.engine.base.Connection object at 0x7ffab0d05650>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+    └ [{'subject': ['English', 'Chemistry', 'Physics'], 'forms_form_id': '57c9d413-2d54-4516-94a2-82bced17c315'}]
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+       │          │           │       └ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x7ffab0d05490>
+       │          │           └ <sqlite3.Cursor object at 0x7ffab0d00c00>
+       │          └ (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+       └ 'UPDATE forms SET subject=? WHERE forms.form_id = ?'
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+    │                                    │                  └ InterfaceError('Error binding parameter 0 - probably unsupported type.')
+    │                                    └ (<class 'sqlite3.InterfaceError'>, InterfaceError('Error binding parameter 0 - probably unsupported type.'), <traceback objec...
+    └ InterfaceError('(sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.')
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+    │       │          │           └ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x7ffab0d05490>
+    │       │          └ (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │       └ 'UPDATE forms SET subject=? WHERE forms.form_id = ?'
+    └ <sqlite3.Cursor object at 0x7ffab0d00c00>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │      │       └ 'UPDATE forms SET subject=? WHERE forms.form_id = ?'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7ffab0d00c00>
+
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: UPDATE forms SET subject=? WHERE forms.form_id = ?]
+[parameters: (['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')]
+(Background on this error at: http://sqlalche.me/e/13/rvf5)
+2021-03-21 20:01:43.437 | ERROR    | __main__:submit:165 - Exception occured in submit handler route: 57c9d413-2d54-4516-94a2-82bced17c315 - (sqlite3.InterfaceError) Error binding parameter 3 - probably unsupported type.
+[SQL: UPDATE forms SET name=?, mobile_number=?, gender=?, subject=? WHERE forms.form_id = ?]
+[parameters: ('jjj', '33333322323', 'other', ['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')]
+(Background on this error at: http://sqlalche.me/e/13/rvf5)
+Traceback (most recent call last):
+
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+    │       │          │           └ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x7ffab0705550>
+    │       │          └ ('jjj', '33333322323', 'other', ['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │       └ 'UPDATE forms SET name=?, mobile_number=?, gender=?, subject=? WHERE forms.form_id = ?'
+    └ <sqlite3.Cursor object at 0x7ffab0748810>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ ('jjj', '33333322323', 'other', ['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │      │       └ 'UPDATE forms SET name=?, mobile_number=?, gender=?, subject=? WHERE forms.form_id = ?'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7ffab0748810>
+
+sqlite3.InterfaceError: Error binding parameter 3 - probably unsupported type.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7ffab617dd40>
+    └ <Thread(Thread-19, started daemon 140714335794944)>
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7ffab617db00>
+    └ <Thread(Thread-19, started daemon 140714335794944)>
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-19, started daemon 140714335794944)>
+    │    │        │    └ (<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    │        └ <Thread(Thread-19, started daemon 140714335794944)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>>
+    └ <Thread(Thread-19, started daemon 140714335794944)>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 47026)
+    │    │              └ <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('...
+    │    └ <function BaseServer.finish_request at 0x7ffab59397a0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+    │    │                   │        └ ('127.0.0.1', 47026)
+    │    │                   └ <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 720, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x7ffab5667b90>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab070fa10>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 345, in handle
+    BaseHTTPRequestHandler.handle(self)
+    │                      │      └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab070fa10>
+    │                      └ <function BaseHTTPRequestHandler.handle at 0x7ffab56d25f0>
+    └ <class 'http.server.BaseHTTPRequestHandler'>
+  File "/home/ubuntu/anaconda/lib/python3.7/http/server.py", line 426, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x7ffab5667d40>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab070fa10>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 379, in handle_one_request
+    return self.run_wsgi()
+           │    └ <function WSGIRequestHandler.run_wsgi at 0x7ffab5667b00>
+           └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab070fa10>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 323, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x7ffab472e2d0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7ffab4657bd0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x7ffab070fa10>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x7ffab0757d40>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 314, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x7ffab06fd7d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/debug/__init__.py", line 304, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x7ffab0757cb0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=10>, 'wsgi.errors': <_io.TextIOWra...
+               │    └ <Flask 'index'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x7ffab472e2d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x7ffab0757cb0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=10>, 'wsgi.errors': <_io.TextIOWra...
+           │    └ <function Flask.wsgi_app at 0x7ffab53bf7a0>
+           └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x7ffab53bce60>
+               └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x7ffab53bcdd0>
+         └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+           │    │              │    │           │   └ {'form_id2': '57c9d413-2d54-4516-94a2-82bced17c315'}
+           │    │              │    │           └ <Request 'http://localhost:5000/submit/57c9d413-2d54-4516-94a2-82bced17c315/' [POST]>
+           │    │              │    └ 'submit'
+           │    │              └ <Rule '/submit/<form_id2>/' (POST, OPTIONS) -> submit>
+           │    └ {'static': <bound method _PackageBoundObject.send_static_file of <Flask 'index'>>, 'index': <function index at 0x7ffab46f6560...
+           └ <Flask 'index'>
+
+> File "/home/ubuntu/pyformbuilder/index.py", line 152, in submit
+    db.session.commit()
+    │  │       └ <function instrument.<locals>.do at 0x7ffab4d86e60>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x7ffab48b0fd0>
+    └ <SQLAlchemy engine=sqlite:////home/ubuntu/pyformbuilder/myforms.db>
+
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+                   │    │           │      │       └ {}
+                   │    │           │      └ ()
+                   │    │           └ 'commit'
+                   │    └ <sqlalchemy.util._collections.ScopedRegistry object at 0x7ffab48b0f90>
+                   └ <sqlalchemy.orm.scoping.scoped_session object at 0x7ffab48b0fd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1042, in commit
+    self.transaction.commit()
+    │    │           └ <function SessionTransaction.commit at 0x7ffab4d817a0>
+    │    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab070fed0>
+    └ <sqlalchemy.orm.session.SignallingSession object at 0x7ffab070ff50>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x7ffab4d81710>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab070fed0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x7ffab4d84b90>
+    │    └ <sqlalchemy.orm.session.SignallingSession object at 0x7ffab070ff50>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab070fed0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2536, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x7ffab4d84d40>
+    └ <sqlalchemy.orm.session.SignallingSession object at 0x7ffab070ff50>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2678, in _flush
+    transaction.rollback(_capture_exception=True)
+    │           └ <function SessionTransaction.rollback at 0x7ffab4d81830>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x7ffab0706bd0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+                   └ <traceback object at 0x7ffab0760910>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2638, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x7ffab4dccd40>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x7ffab0706090>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x7ffab0706090>
+    │   └ <function SaveUpdateAll.execute at 0x7ffab4dd15f0>
+    └ SaveUpdateAll(mapped class Forms->forms)
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x7ffab0706090>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+    update,
+    └ <generator object _collect_update_commands at 0x7ffab0742e50>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 995, in _emit_update_statements
+    statement, multiparams
+    │          └ [{'gender': 'other', 'name': 'jjj', 'mobile_number': '33333322323', 'subject': ['English', 'Chemistry', 'Physics'], 'forms_fo...
+    └ <sqlalchemy.sql.dml.Update object at 0x7ffab157b9d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+           │    │     │            └ {}
+           │    │     └ ([{'gender': 'other', 'name': 'jjj', 'mobile_number': '33333322323', 'subject': ['English', 'Chemistry', 'Physics'], 'forms_f...
+           │    └ <sqlalchemy.engine.base.Connection object at 0x7ffab0706c50>
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Update object at 0x7ffab157b9d0>>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+           │          │                      │     │            └ {}
+           │          │                      │     └ ([{'gender': 'other', 'name': 'jjj', 'mobile_number': '33333322323', 'subject': ['English', 'Chemistry', 'Physics'], 'forms_f...
+           │          │                      └ <sqlalchemy.sql.dml.Update object at 0x7ffab157b9d0>
+           │          └ <function Connection._execute_clauseelement at 0x7ffab4ffb050>
+           └ <sqlalchemy.engine.base.Connection object at 0x7ffab0706c50>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+    └ [{'gender': 'other', 'name': 'jjj', 'mobile_number': '33333322323', 'subject': ['English', 'Chemistry', 'Physics'], 'forms_fo...
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+       │          │           │       └ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x7ffab0705550>
+       │          │           └ <sqlite3.Cursor object at 0x7ffab0748810>
+       │          └ ('jjj', '33333322323', 'other', ['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+       └ 'UPDATE forms SET name=?, mobile_number=?, gender=?, subject=? WHERE forms.form_id = ?'
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+    │                                    │                  └ InterfaceError('Error binding parameter 3 - probably unsupported type.')
+    │                                    └ (<class 'sqlite3.InterfaceError'>, InterfaceError('Error binding parameter 3 - probably unsupported type.'), <traceback objec...
+    └ InterfaceError('(sqlite3.InterfaceError) Error binding parameter 3 - probably unsupported type.')
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+    │       │          │           └ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x7ffab0705550>
+    │       │          └ ('jjj', '33333322323', 'other', ['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │       └ 'UPDATE forms SET name=?, mobile_number=?, gender=?, subject=? WHERE forms.form_id = ?'
+    └ <sqlite3.Cursor object at 0x7ffab0748810>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ ('jjj', '33333322323', 'other', ['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')
+    │      │       └ 'UPDATE forms SET name=?, mobile_number=?, gender=?, subject=? WHERE forms.form_id = ?'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7ffab0748810>
+
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 3 - probably unsupported type.
+[SQL: UPDATE forms SET name=?, mobile_number=?, gender=?, subject=? WHERE forms.form_id = ?]
+[parameters: ('jjj', '33333322323', 'other', ['English', 'Chemistry', 'Physics'], '57c9d413-2d54-4516-94a2-82bced17c315')]
+(Background on this error at: http://sqlalche.me/e/13/rvf5)
+2021-03-22 16:54:58.206 | ERROR    | __main__:delete:199 - Exception occured in delete handler route: 194afa1f-6e55-40b1-884e-506d05499db6 - name 'true' is not defined
+Traceback (most recent call last):
+
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7f3bb1446ef0>
+    └ <Thread(Thread-33, started daemon 139894273873664)>
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7f3bb1446cb0>
+    └ <Thread(Thread-33, started daemon 139894273873664)>
+  File "/home/ubuntu/anaconda/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-33, started daemon 139894273873664)>
+    │    │        │    └ (<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('...
+    │    │        └ <Thread(Thread-33, started daemon 139894273873664)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x7f3baf9569d0>>
+    └ <Thread(Thread-33, started daemon 139894273873664)>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 59300)
+    │    │              └ <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('1...
+    │    └ <function BaseServer.finish_request at 0x7f3bb0c00950>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7f3baf9569d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x7f3baf9569d0>
+    │    │                   │        └ ('127.0.0.1', 59300)
+    │    │                   └ <socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=('1...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7f3baf9569d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/socketserver.py", line 720, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x7f3bb0930d40>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x7f3b97fa5390>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 345, in handle
+    BaseHTTPRequestHandler.handle(self)
+    │                      │      └ <werkzeug.serving.WSGIRequestHandler object at 0x7f3b97fa5390>
+    │                      └ <function BaseHTTPRequestHandler.handle at 0x7f3bb099a7a0>
+    └ <class 'http.server.BaseHTTPRequestHandler'>
+  File "/home/ubuntu/anaconda/lib/python3.7/http/server.py", line 426, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x7f3bb0930ef0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x7f3b97fa5390>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 379, in handle_one_request
+    return self.run_wsgi()
+           │    └ <function WSGIRequestHandler.run_wsgi at 0x7f3bb0930cb0>
+           └ <werkzeug.serving.WSGIRequestHandler object at 0x7f3b97fa5390>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 323, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x7f3bafb2db50>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x7f3baf9569d0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x7f3b97fa5390>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x7f3b97fccef0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/serving.py", line 314, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x7f3b97ffb3d0>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/werkzeug/debug/__init__.py", line 304, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x7f3b97fccf80>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=9>, 'wsgi.errors': <_io.TextIOWrap...
+               │    └ <Flask 'index'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x7f3bafb2db50>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x7f3b97fccf80>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=9>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x7f3bb0685950>
+           └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x7f3bb0685050>
+               └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x7f3bb0683f80>
+         └ <Flask 'index'>
+  File "/home/ubuntu/anaconda/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+           │    │              │    │           │   └ {'form_id2': '194afa1f-6e55-40b1-884e-506d05499db6'}
+           │    │              │    │           └ <Request 'http://localhost:5000/delete/194afa1f-6e55-40b1-884e-506d05499db6/' [GET]>
+           │    │              │    └ 'delete'
+           │    │              └ <Rule '/delete/<form_id2>/' (GET, HEAD, OPTIONS, POST) -> delete>
+           │    └ {'static': <bound method _PackageBoundObject.send_static_file of <Flask 'index'>>, 'index': <function index at 0x7f3bafb14320...
+           └ <Flask 'index'>
+
+> File "/home/ubuntu/pyformbuilder/index.py", line 195, in delete
+    response[APP_IS_SUCCESS] = true
+    │        └ 'isSuccess'
+    └ {'isSuccess': False, 'msg': "Exception occured in delete handler route: 194afa1f-6e55-40b1-884e-506d05499db6 - name 'true' is...
+
+NameError: name 'true' is not defined
