@@ -1,7 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Render</title>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<script src="../../src/static/js/libraries/jquery.min.js"></script>
+	<script src="../../src/static/js/libraries/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../src/static/css/libraries/bootstrap.min.css"/>
+	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" /> -->
+
+    <!-- <script src="/nexa/static_nexa/js/vendor/popper.min.js"></script> -->
 </head>
 <body>
 	<div class="container">
@@ -9,5 +15,6 @@
 			{{ render_form|safe }}
 		</div>
 	</div>
+	<script src="{{url_for('static', filename='static/js/form.js')}}"></script>
 </body>
 </html>

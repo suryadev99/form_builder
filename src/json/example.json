@@ -1,6 +1,7 @@
 {
-    "title": "My Form",
-    "description": "This is my form. Please fill it out. It's awesome!",
+    "title": "Guest Details",
+    "description": "This is my form. Please fill it out.",
     "fields": [
+        {"title": "Name", "type": "element-single-line-text", "required": true, "position": 1}, {"title": "Mobile Number", "type": "element-single-line-text", "required": true, "position": 2}, {"title": "email", "type": "element-single-line-text", "required": false, "position": 3}, {"title": "gender", "type": "element-multiple-choice", "required": true, "position": 4, "choices": [{"title": "male", "value": "male", "checked": true}, {"title": "female", "value": "female", "checked": false}, {"title": "other", "value": "other", "checked": false}]}, {"title": "subject", "type": "element-checkboxes", "required": true, "position": 5, "choices": [{"title": "English", "value": "English", "checked": true}, {"title": "Chemistry", "value": "Chemistry", "checked": false}, {"title": "Physics", "value": "Physics", "checked": false}]}
     ]
 }

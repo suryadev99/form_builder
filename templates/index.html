@@ -4,50 +4,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="Shlomi Nissan">
 
-    <title>jQuery Form Builder v3.0</title>
+    <title>Form Builder</title>
 
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/static/css/style.css">
 
   </head>
 
   <body>
 
     <div style="margin-top: 20px">
-
+      <div class="header">
+        <a href="http://localhost:5000/" class="logo">Form Builder</a>
+        <div class="header-right">
+          <a class="home" id="home" href="http://localhost:5000/">Home</a>
+          <a clas="form_list" id="form_list" href="http://localhost:5000/List">List</a>
+        </div>
+      </div>
       <div id="formBuilder"></div>
 
       <div id="footer">
 
         <p>
-          “As we enjoy great advantages from the inventions of others, we should be glad of an opportunity to serve others by any invention of ours; and this we should do freely and generously.”
+          “Form builder”
         </p>
-
-        <p style="margin-top: 0">
-          Fork it on <a target="_blank" href="http://1bytebeta.com">GitHub</a> (original version, include loader for php)
-        </p>
-
-		<p style="margin-top: 0">
-          Or if you want to fork the loader with <a target="_blank" href="https://github.com/linxlunx/pyformbuilder">python version</a><br/><br/>
-        </p>        
-
-
 
       </div>
 
     </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-    <script src="src/libraries/dust-js/dust-core-0.3.0.min.js"></script>
-    <script src="src/libraries/dust-js/dust-full-0.3.0.min.js"></script>
-    <script src="src/libraries/dust-js/dust-helpers.js"></script>
-    <script src="src/libraries/tabs.jquery.js"></script>
-    <script src="src/formBuilder.jquery.js"></script>
+    <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js></script>
+    <script src=https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.1/jquery-ui.min.js></script>
+    <script src="src/static/js/libraries/dust-js/dust-core-0.3.0.min.js"></script>
+    <script src="src/static/js/libraries/dust-js/dust-full-0.3.0.min.js"></script>
+    <script src="src/static/js/libraries/dust-js/dust-helpers.js"></script>
+    <script src="src/static/js/libraries/tabs.jquery.js"></script>
+    <script src="src/static/js/libraries/formBuilder.jquery.js"></script>
 
 
     <script>
@@ -57,11 +49,6 @@
         load_url: 'src/json/example.json',
         save_url: '{{ base_url }}/save',
         
-        onSaveForm: function() {
-          // redirect to demo page
-          window.location.href = '{{ base_url }}/render';
-        }
-
       });
 
     </script>

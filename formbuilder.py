@@ -49,11 +49,13 @@ class formLoader:
 		"""
 		Render the form header
 		"""
-		html = '''<form action="{0}" method="post" accept-charset="utf-8" role="form" novalidate="novalidate" >'''.format(self.action);
+		print(self.form_data)
+		# html = '''<form action="{0}" method="post" accept-charset="utf-8" role="form" novalidate="novalidate" >'''.format(self.action);
+		html = '''<form method="post" accept-charset="utf-8" role="form" novalidate="novalidate" >'''
 		html += '''<div class="form-title">'''
 		html += '''<h2>{0}</h2><h3>{1}</h3>'''.format(self.form_data['title'], self.form_data['description'])
 		html += fields
-		html += '''<button type="submit" class="btn btn-primary">Submit</button>'''
+		html += '''<button type="submit" id="submit_btn" class="btn btn-primary">Submit</button>'''
 		html += '''</div></form>'''
 
 		return html
@@ -132,7 +134,7 @@ class formLoader:
 		html = '''<div class="form-group">'''
 		html += self.make_label(id, field['title'], required)
 
-		for i in xrange(len(field['choices'])):
+		for i in range(len(field['choices'])):
 			checked = 'checked' if field['choices'][i]['checked'] else ''
 
 			html += '''<div class="checkbox"><label>'''
@@ -153,7 +155,7 @@ class formLoader:
 		html = '''<div class="form-group">'''
 		html += self.make_label(id, field['title'], required)
 
-		for i in xrange(len(field['choices'])):
+		for i in range(len(field['choices'])):
 			checked = 'checked' if field['choices'][i]['checked'] else ''
 
 			html += '''<div class="radio"><label>'''
