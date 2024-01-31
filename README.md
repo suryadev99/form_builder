@@ -1,4 +1,5 @@
 # form builder
+A simple form builder made using javascript.
 
 ## How to use
 - Install the requirement first
